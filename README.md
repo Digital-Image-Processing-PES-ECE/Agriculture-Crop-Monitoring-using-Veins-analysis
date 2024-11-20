@@ -59,4 +59,4 @@ by disease or pests.
    
 ### Limitations and Future Work:
 to combine both method together and get  precise output and 
-informing the farmer how much it is prone to disease and informing the concentration of NPK to be used precisialy  to remove that pest
+informing the farmer how much it is prone to disease and also  concentration of NPK to be used precisialy  to remove that pest

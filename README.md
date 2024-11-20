@@ -2,11 +2,8 @@
 AGRICULTURE CROP MONITORING  USING VEINS ANALYSIS
 
 ### Project Description:
-presents a dual-method approach for an analyzing leaf health by detecting 
-abnormal vein widths and segmenting diseased areas using HSV-based color 
-segmentation. The vein analysis identifies irregular structures and color segmentation 
-highlights unhealthy regions. This approach aims to detect early pest detection precisily.
-
+ This project presents a dual-method approach for an analyzing leaf health by detecting abnormal vein widths and segmenting diseased areas using HSV-based color 
+segmentation. The vein analysis identifies irregular structures and color segmentation highlights unhealthy regions. This approach aims to detect early pest detection precisily.
 #### Summary - 
 This project we use vein analysis and HSV - based segmentation to automate pest 
 damage detection. Vein irregularities often indicate early plant stress, while colour-based 
@@ -14,26 +11,23 @@ segmentation effectively identifies diseased regions. Together, these methods pr
 comprehensive solution for assessing leaf health and aiding precision agriculture. 
 
 #### Course concepts used - 
-1. -image enhancment
-2. -dillution
-3. -Edge detetction
-
+1.image processing -greyscale conversion,image enhancment to enhance contrast usingg adaptive histogram equalization
+2.  Morphological Operations: morphological operations to thicken the vein structure and dillation
+3. -Edge detetction: for veins analysis
    
 #### Additional concepts used -
-1. -hsv,masking
-2. - regionprops inbuilt function to find connected components in the vein structure 
+1. -hsv:Highlight diseased areas on the original image
+2. - regionprops:inbuilt function to find connected components in the vein structure  by measuring area and perimeter
    
 #### Dataset - 
-Link and/or Explanation if generated
 https://www.kaggle.com/datasets/nirmalsankalana/crop-pest-and-disease-detection
 
 #### Novelty - 
 1. -uniquely combines vein structure irregularities or color-based segmentation to enhance detection accuracy. 
 2. -The vein analysis identifies structural abnormalities which helps giving,indicative of 
 pest-induced stress, while HSV segmentation highlights visual discoloration caused 
-by disease or pests. 
-3. -
-   
+by disease or pests.
+3.The use of skeletonization and distance transforms allows precise vein width measurement.
 ### Contributors:
 1. Name (SRN):Anushka keshri (pes1ug22ec042)
 2. Name (SRN):Spoorthi N(pes1ug22ec811
@@ -47,6 +41,7 @@ by disease or pests.
 
 3. Run the Code
 ```python main.py (for eg.)```
+
 
 ### Outputs:
 * Important intermediate steps

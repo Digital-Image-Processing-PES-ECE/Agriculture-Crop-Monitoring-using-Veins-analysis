@@ -44,9 +44,7 @@ by disease or pests.
 
 
 ### Outputs:
-* Important intermediate steps
-* 
-* Final output images 
+* Important intermediate steps-conversion to grey level 
 
 ### References:
 1. -https://ieeexplore.ieee.org/document/9622812/

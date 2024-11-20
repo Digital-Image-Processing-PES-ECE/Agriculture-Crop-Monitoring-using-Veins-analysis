@@ -1,0 +1,86 @@
+folderPath = 'C:\Users\91993\Downloads\Cashew anthracnose'; 
+% Get list of all images in the folder 
+imageFiles = dir(fullfile(folderPath, '.jpg')); % Change '.jpg' if your images have a different format 
+% Preallocate a cell array to store images     
+numImages = length(imageFiles); 
+images = cell(1, numImages); 
+% Loop through each image and load it 
+for i = 1:numImages 
+imgPath = fullfile(folderPath, imageFiles(i).name); 
+images{i} = imread(imgPath); 
+end 
+% Display an example image to verify 
+imshow(images{1}); 
+title('Example Image from Dataset'); 
+% Begin image processing on the first image 
+img = images{1}; 
+% Step 1: Convert to Grayscale 
+gray_img = rgb2gray(img); 
+figure; 
+imshow(gray_img); 
+title('Grayscale Image'); 
+% Step 2: Image Preprocessing (Enhancement) 
+% Enhance contrast using adaptive histogram equalization 
+enhanced_img = adapthisteq(gray_img); 
+figure; 
+imshow(enhanced_img); 
+title('Enhanced Grayscale Image'); 
+% Step 3: Edge Detection for Vein Extraction 
+% Use Sobel or Canny edge detection to extract veins 
+edges = edge(enhanced_img, 'Canny'); 
+figure; 
+imshow(edges); 
+title('Vein Extraction (Edge Detection)'); 
+% Step 4: Morphological Operations to Enhance Veins 
+% Perform morphological operations to thicken the vein structures 
+se = strel('line', 2, 90); % Structural element for dilation 
+dilated_img = imdilate(edges, se); 
+figure; 
+imshow(dilated_img); 
+title('Dilated Veins for Analysis'); 
+% Step 5: Vein Pattern Analysis 
+% Use regionprops to find connected components in the vein structure 
+props = regionprops(dilated_img, 'Area', 'Perimeter'); 
+vein_areas = [props.Area]; 
+vein_perimeters = [props.Perimeter]; 
+% Displaying analysis results 
+fprintf('Number of vein segments: %d\n', length(props)); 
+fprintf('Average vein area: %.2f\n', mean(vein_areas)) 
+fprintf('Average vein perimeter: %.2f\n', mean(vein_perimeters)) 
+%code 2
+img = imread("C:\Users\hp\OneDrive\spoorthi\healthy leaf.jpg");  
+hsvImg = rgb2hsv(img); 
+hue = hsvImg(:, :, 1); 
+saturation = hsvImg(:, :, 2); 
+value = hsvImg(:, :, 3); 
+healthyMask = (hue > 0.2) & (hue < 0.4) & (saturation > 0.3) & (value > 0.2); 
+diseasedMask = ~healthyMask & (value < 0.5) & (saturation < 0.4); 
+% Display original image 
+figure; 
+subplot(2, 2, 1); 
+imshow(img); 
+title('Original Image'); 
+% Display healthy areas mask 
+subplot(2, 2, 2); 
+imshow(healthyMask); 
+title('Healthy Areas Mask'); 
+% Display diseased areas mask 
+subplot(2, 2, 3); 
+imshow(diseasedMask); 
+title('Disease Areas Mask'); 
+% Highlight diseased areas on the original image 
+highlightedImg = img; 
+highlightedImg(repmat(diseasedMask, [1, 1, 3])) = 255; % Highlight diseased areas in 
+white 
+% Display the highlighted image 
+subplot(2, 2, 4); 
+imshow(highlightedImg); 
+title('Detected Disease Areas'); 
+% Calculate the percentage of diseased area 
+diseasedPercentage = sum(diseasedMask(:)) / numel(diseasedMask) * 100; 
+% Display the result in the command window 
+if diseasedPercentage > 4% Adjust threshold as needed 
+disp('The leaf is diseased.'); 
+else 
+disp('The leaf is healthy.'); 
+end

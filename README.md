@@ -11,8 +11,8 @@ comprehensive solution for assessing leaf health and aiding precision agricultur
 
 #### Course concepts used - 
 1.image processing -greyscale conversion,image enhancment to enhance contrast usingg adaptive histogram equalization
-2.  Morphological Operations: morphological operations to thicken the vein structure and dillation
-3. -Edge detetction: for veins analysis
+2.Morphological Operations: morphological operations to thicken the vein structure and dillation
+3.Edge detetction: for veins analysis
 4.skeletonization:to precise vein width
    
 #### Additional concepts used -
@@ -45,6 +45,7 @@ by disease or pests.
 
 2.Z. Wang, C. Zhao, H. Zhang and H. Fan, "Real-Time Remote Monitoring and Warning System in General Agriculture Environment," 2011 International Conference of Information Technology, Computer Engineering and Management Sciences, Nanjing, China, 2011, pp. 160-163, doi: 10.1109/ICM.2011.228. 
 3.Q. Huang, W. Wu, L. Zhang and D. Li, "MODIS-NDVI-Based crop growth monitoring in China Agriculture Remote Sensing Monitoring System," 2010 Second IITA International Conference on Geoscience and Remote Sensing, Qingdao, China, 2010, pp. 287-290, doi: 10.1109/IITA-GRS.2010.5603948. 
+
 ### Limitations:
 1.only analyzing leaf with white background doesnt work if background is coloured
 2.did not tried taking image from camera till now it is working well with image provided by dataset
